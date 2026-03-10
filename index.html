@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bread Station</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1 class="h1super">Bread Station</h1></br>
+    <h2>Michael Cuanico</h2>
+    <h3>Bread Lover, Bread Maker</h3>
+    <h3>I crave bread, and craft bread.</h3>
+    <h3>I make premium pandesals in San Jose.</h3>
+
+    <div class="slider">
+      <div class="slide active"><img src="assets/bread1.jpg" alt="bread1"></div>
+      <div class="slide"><img src="assets/bread2.jpg" alt="bread2"></div>
+    </div>
+        <p class="contact">Contact: (512) 839-2741</p>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    setInterval(nextSlide, 3000);
+  </script>
+
+</body>
+</html>
